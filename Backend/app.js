@@ -12,6 +12,12 @@ const app = express();
 app.use(express.json());
 //morgan
 app.use(morgan("tiny"));
+
+import usersRouter from "./routes/usersRouter.js"
+import booksRouter from "./routes/booksRouter.js"
+import searchRouter from "./routes/searchRouter.js"
+import cartRouter from "./routes/cartRouter.js"
+
 //mongoose connect 
 mongoose
   .connect("mongodb://127.0.0.1:27017/bookstore")
