@@ -2,15 +2,15 @@ import {Router} from "express"
 import { auth } from "../middlewares/authorization.js";
 import { isAdmin } from "../middlewares/isAdmin.js";
 
-import { getAllBooks,getBookById } from "../controllers/booksController.js";
+import { getAllBooks,getBookById,createBook,updateBook,deleteBook } from "../controllers/booksController.js";
 const router=Router()
 
 
 router.get("/allBooks",auth,isAdmin,getAllBooks);
 router.get("/getBookById/:id",auth,isAdmin,getBookById);
-/* router.post("/createBook",auth,isAdmin,createBook);
+router.post("/createBook",auth,isAdmin,createBook);
 router.patch("/updateBook/:id",auth,isAdmin,updateBook);
-router.delete("/deleteBook/:id",auth,isAdmin,deleteBook) */
+router.delete("/deleteBook/:id",auth,isAdmin,deleteBook)
 
 
 export default router
