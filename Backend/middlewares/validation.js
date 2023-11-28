@@ -1,6 +1,8 @@
 import { body, validationResult } from "express-validator"
 import User from "../models/userSchema.js"
-
+const capitalize=(word)=>{
+    return word.charAt(0).toUpperCase()+word.slice(1)
+}
 
 
 export const userValidation =

@@ -4,13 +4,13 @@ const booksSchema=new Schema({
     id:Number,
     title:{type:String,required:true},
     authors:[{
-        name:String,
+        name:{type:String},
         birth_year:Number,
         death_year:Number
     }],
     translators:[],
     subjects:[String],
-    bookshelves:[String],
+    bookshelves:[{type:String}],
     languages:[String],
     copyright:Boolean,
     media_type:String,
@@ -20,6 +20,6 @@ const booksSchema=new Schema({
     download_count:Number
 })
 
-const Books=model("books",booksSchema)
+const Book=model("books",booksSchema)
 
-export default Books
+export default Book
