@@ -1,9 +1,16 @@
-import React from 'react'
+import "./searchbar.css"
 
 function SearchBar() {
   return (
-    <div>SearchBar</div>
-  )
+    <div className="searchbar">
+      <img className="search-icon" alt="" src="/search.svg" />
+      <input
+        className="search-books"
+        placeholder="Search Books"
+        type="text"
+      />
+    </div>
+  );
 }
 
-export default SearchBar
+export default SearchBar;

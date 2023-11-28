@@ -1,0 +1,30 @@
+
+
+  .login {
+    justify-content: center;
+    padding: var(--padding-3xs);
+    cursor: pointer;
+  }
+  .navbar {
+    margin: 0;
+    background-color: #5b5e4c;
+    width: 100vw;
+    height: 4.38rem;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: var(--font-size-xl);
+    color: var(--color-white);
+    font-family: var(--font-inter);
+}
+
+.nav{
+    display: flex;
+    width: 20rem;
+    justify-content: space-evenly;
+    
+  }

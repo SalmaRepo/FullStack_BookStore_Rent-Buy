@@ -1,30 +1,30 @@
-import React from 'react'
-import {Link} from "react-router-dom"
+
+import "./navbar.css"
+import { Link } from "react-router-dom";
+import SearchBar from "../SearchBar/SearchBar";
 
 function NavBar() {
+  
+
   return (
-    <div className='navbar'>
-     
-            <ul className='nav'>
-                <li>Logo</li>
-                <li>
-                    <Link to="/search">
-                        <div>searchbar</div>
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/login">login</Link>
-                </li>
-                <li>
-                    <Link to="/profile">profile</Link>
-                </li>
-                <li>
-                    <Link to="/cart">cart</Link>
-                </li>
-            </ul>
-      
+    <>
+    <div className="navbar">
+      <SearchBar />
+      <ul className="nav">
+        <li>
+          <Link to="/login" >Login</Link>
+        </li>
+        <li>
+          <Link to="/profile">Profile</Link>
+        </li>
+        <li>
+          <Link to="/cart">Cart</Link>
+        </li>
+      </ul>
     </div>
-  )
+     
+    </>
+  );
 }
 
-export default NavBar
+export default NavBar;

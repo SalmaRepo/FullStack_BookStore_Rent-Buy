@@ -1,0 +1,127 @@
+.loginYourAccount {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-weight: 400;
+  font-family: inherit;
+}
+.loginboxcontainer-child,
+.loginboxcontainer-item {
+  border: 1px solid var(--color-darkgray);
+  font-family: var(--font-inter);
+  font-size: var(--font-size-xl);
+  background-color: transparent;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 var(--padding-3xs);
+}
+.loginboxcontainer-child {
+  box-sizing: border-box;
+  height: 40px;
+  justify-content: flex-start;
+}
+.loginboxcontainer-item {
+  justify-content: space-between;
+}
+.forgot-your-password {
+  flex: 1;
+  position: relative;
+}
+.forgot-your-password-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sign-in {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: left;
+}
+.sign-in-continue-wrapper {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs);
+  background-color: var(--greencolor);
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.create-an-account {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: left;
+  cursor: pointer;
+}
+.create-an-account-wrapper {
+  cursor: pointer;
+  border: 1px solid var(--color-darkgray);
+  padding: var(--padding-3xs);
+  background-color: transparent;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.loginboxcontainer1 {
+  align-self: stretch;
+  height: 252px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-xl) var(--padding-10xl) var(--padding-xl)
+    var(--padding-xl);
+  box-sizing: border-box;
+  gap: var(--gap-3xs);
+  text-align: right;
+}
+.terms-of-use3 {
+  text-decoration: underline;
+}
+.terms-of-use2 {
+  color: inherit;
+}
+.by-signing-in-container {
+  position: relative;
+}
+.by-signing-in-you-are-agreeing-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: inherit;
+}
+.logincontainer {
+  background-color: var(--color-beige);
+  width: 450px;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-lgi) var(--padding-xl);
+  box-sizing: border-box;
+  gap: var(--gap-11xl);
+  max-width: 100%;
+  max-height: 100%;
+  text-align: left;
+  font-size: var(--font-size-3xs);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}

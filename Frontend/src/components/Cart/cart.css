@@ -1,0 +1,79 @@
+.bookcard,
+.footer1 {
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.bookcard {
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 15.25rem;
+  height: 28.63rem;
+  align-items: flex-start;
+  padding: 0 var(--padding-16xl);
+  gap: var(--gap-10xl);
+}
+
+.bookcard,
+.descriptionontainer {
+  width: 13.06rem;
+  align-items: center;
+  gap: var(--gap-8xs);
+}
+
+.descriptionontainer1 {
+  width: 12.75rem;
+  height: 3.25rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+.bookcard,
+.descriptionontainer,
+.descriptionontainer1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.bookImage {
+  width: 11.31rem;
+  height: 16.88rem;
+  object-fit: cover;
+}
+.title,
+.bookImage {
+  position: relative;
+}
+.fiction-wrapper,
+.title-wrapper {
+  width: 12.75rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.title-wrapper {
+  height: 2.44rem;
+  justify-content: flex-end;
+  padding: var(--padding-11xs) 0;
+  box-sizing: border-box;
+  font-size: var(--font-size-5xl);
+}
+.fiction-wrapper {
+  height: 1.25rem;
+  justify-content: center;
+}
+.by,
+.by1 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+}
+.by1 {
+  color: var(--color-dimgray-100);
+}
