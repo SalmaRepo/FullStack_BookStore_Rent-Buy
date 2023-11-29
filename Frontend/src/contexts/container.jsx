@@ -12,7 +12,7 @@ export default function Container({ children }) {
         const token = localStorage.getItem("token")
         
         if(token){
-            fetch("http://localhost:4000/api/user/verifytoken",{
+            fetch("http://localhost:4000/api/users/verifytoken",{
                 method:"GET",
                 headers:{"token":token}
             }).then(res=>res.json())
@@ -27,7 +27,7 @@ export default function Container({ children }) {
     },[])
 
     return (
-        <MyContext.Provider value={{user,setUser,records,setRecords,cart,setCart}}>
+        <MyContext.Provider value={{user,setUser,books,setBooks,cart,setCart}}>
             {children}
 
 
