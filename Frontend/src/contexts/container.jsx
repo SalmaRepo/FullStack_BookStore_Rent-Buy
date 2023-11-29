@@ -13,7 +13,7 @@ export default function Container({ children }) {
         const token = localStorage.getItem("token")
         
         if(token){
-            fetch("http://localhost:4000/api/user/verifytoken",{
+            fetch("http://localhost:4000/api/users/verifytoken",{
                 method:"GET",
                 headers:{"token":token}
             }).then(res=>res.json())

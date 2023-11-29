@@ -6,7 +6,7 @@ import { getAllBooks,getBookById,createBook,updateBook,deleteBook } from "../con
 const router=Router()
 
 
-router.get("/allBooks",auth,isAdmin,getAllBooks);
+router.get("/allBooks",getAllBooks);
 router.get("/getBookById/:id",auth,isAdmin,getBookById);
 router.post("/createBook",auth,isAdmin,createBook);
 router.patch("/updateBook/:id",auth,isAdmin,updateBook);
