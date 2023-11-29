@@ -1,0 +1,265 @@
+.be-a-user {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+    display: inline-block;
+    width: 116.9px;
+    height: 22px;
+    flex-shrink: 0;
+    transform: rotate(-14.71deg);
+    transform-origin: 0 0;
+  }
+  .be-a-user-wrapper {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 36px;
+    font-family: var(--font-island-moments);
+  }
+  .embark-on-reading {
+    flex: 1;
+    position: relative;
+    font-weight: 600;
+  }
+  .embark-on-reading-bliss-wrapper {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .join-our-bookshop {
+    flex: 1;
+    position: relative;
+    font-weight: 300;
+  }
+  .frame-parent4,
+  .join-our-bookshop-and-unlock-a-wrapper {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .join-our-bookshop-and-unlock-a-wrapper {
+    margin: 0;
+    flex-direction: row;
+    font-size: var(--font-size-xs);
+  }
+  .frame-parent4 {
+    flex-direction: column;
+    gap: 9px;
+    font-size: 14px;
+  }
+  .boocklogo-1-icon {
+    position: relative;
+    width: 103px;
+    height: 97px;
+    object-fit: cover;
+  }
+  .explore-literary-wonders {
+    display: inline-block;
+    height: 64px;
+    flex-shrink: 0;
+  }
+  .explore-literary-wonders,
+  .join-us-on {
+    margin: 0;
+    align-self: stretch;
+    position: relative;
+    font-weight: 300;
+  }
+  .createuserboxlogo {
+    background-color: var(--greencolor);
+    width: 214px;
+    height: 684px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--padding-10xl) 25px;
+    box-sizing: border-box;
+    gap: 59px;
+  }
+  .login-your-account {
+    flex: 1;
+    position: relative;
+  }
+  .login-your-account-wrapper {
+    flex-direction: row;
+    padding: 0 var(--padding-xl);
+  }
+  .frame-parent5,
+  .login-your-account-container,
+  .login-your-account-wrapper {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .login-your-account-container {
+    margin: 0;
+    flex-direction: row;
+    padding: 0 var(--padding-xl);
+    font-size: var(--font-size-xs);
+  }
+  .frame-parent5 {
+    flex-direction: column;
+    gap: var(--gap-3xs);
+  }
+  .frame-item {
+    border: 1px solid var(--color-darkgray);
+    font-family: var(--font-inter);
+    font-size: var(--font-size-xl);
+    background-color: transparent;
+    box-sizing: border-box;
+    height: 40px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 var(--padding-3xs);
+  }
+  .frame-input,
+  .frame-item,
+  .frame-parent6 {
+    align-self: stretch;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .frame-input {
+    border: 1px solid var(--color-darkgray);
+    font-family: var(--font-inter);
+    font-size: var(--font-size-xl);
+    background-color: transparent;
+    box-sizing: border-box;
+    height: 40px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 var(--padding-smi);
+  }
+  .frame-parent6 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-11xl);
+  }
+  .terms-conditions1 {
+    text-decoration: underline;
+  }
+  .terms-conditions {
+    color: inherit;
+  }
+  .by-clicking-create-container {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    width: 269.3px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+  .create-account {
+    position: relative;
+    font-size: var(--font-size-xl);
+    font-family: var(--font-inter);
+    color: var(--color-white);
+    text-align: left;
+  }
+  .create-account-wrapper {
+    cursor: pointer;
+    border: 0;
+    padding: var(--padding-3xs);
+    background-color: var(--greencolor);
+    border-radius: var(--br-3xs);
+    width: 165px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .cancel {
+    position: relative;
+    font-size: var(--font-size-xl);
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: left;
+  }
+  .cancel-wrapper {
+    cursor: pointer;
+    border: 1px solid var(--color-darkgray);
+    padding: var(--padding-3xs);
+    background-color: transparent;
+    flex: 1;
+    border-radius: var(--br-3xs);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .frame-parent7 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 var(--padding-11xs);
+    gap: 14px;
+  }
+  .by-clicking-create-account-y-parent,
+  .loginboxcontainer {
+    align-self: stretch;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .by-clicking-create-account-y-parent {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .loginboxcontainer {
+    flex: 1;
+    overflow: hidden;
+    padding: var(--padding-xl) 0 0;
+    gap: 95px;
+    text-align: right;
+    font-size: var(--font-size-3xs);
+    color: inherit;
+  }
+  .createuserbox,
+  .creatusercontainer,
+  .loginboxcontainer {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .createuserbox {
+    background-color: var(--color-beige);
+    width: 405px;
+    height: 684px;
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--padding-lgi) var(--padding-xl);
+    box-sizing: border-box;
+    gap: var(--gap-11xl);
+    text-align: left;
+    font-size: var(--font-size-xl);
+    color: var(--color-black);
+  }
+  .creatusercontainer {
+    width: 618.6px;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    text-align: center;
+    font-size: var(--font-size-xs);
+    color: var(--color-white);
+    font-family: var(--font-inter);
+  }
+  

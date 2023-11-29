@@ -6,8 +6,7 @@
   font-weight: 400;
   font-family: inherit;
 }
-.loginboxcontainer-child,
-.loginboxcontainer-item {
+.loginboxcontainer-child {
   border: 1px solid var(--color-darkgray);
   font-family: var(--font-inter);
   font-size: var(--font-size-xl);
@@ -23,9 +22,7 @@
   height: 40px;
   justify-content: flex-start;
 }
-.loginboxcontainer-item {
-  justify-content: space-between;
-}
+
 .forgot-your-password {
   flex: 1;
   position: relative;
@@ -95,10 +92,10 @@
 .terms-of-use2 {
   color: inherit;
 }
-.by-signing-in-container {
+.signingContainer {
   position: relative;
 }
-.by-signing-in-you-are-agreeing-wrapper {
+.signingWrapper {
   align-self: stretch;
   display: flex;
   flex-direction: row;
