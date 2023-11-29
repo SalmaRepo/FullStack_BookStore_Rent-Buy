@@ -19,14 +19,7 @@ function NavBar() {
                 <li>
                     <Link to="/login">Login</Link>
                 </li>
-<<<<<<< HEAD
-                <li>
-                    <Link to="/register">register</Link>
-                </li>
-                <li>
-=======
                 {user&&<li>
->>>>>>> cdc054d993d9f3149fdac41ce62f354900227454
                     <Link to="/profile">profile</Link>
                 </li>}
                 <li>

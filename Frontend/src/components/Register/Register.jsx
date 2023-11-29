@@ -1,5 +1,4 @@
 import React from 'react'
-
 import toast,{Toaster} from 'react-hot-toast' //this is for popups after login
 import { useNavigate } from 'react-router-dom';
 
@@ -36,7 +35,6 @@ export default function Register() {
   }
   return (
    
-
 
     <div >
       
