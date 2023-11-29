@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react";
 import { MyContext } from "./context";
 
+
 export default function Container({ children }) {
     const [user,setUser] = useState(null)
     const [books,setBooks]=useState([])
@@ -27,7 +28,7 @@ export default function Container({ children }) {
     },[])
 
     return (
-        <MyContext.Provider value={{user,setUser,records,setRecords,cart,setCart}}>
+        <MyContext.Provider value={{user,setUser,books,setBooks,cart,setCart}}>
             {children}
 
 

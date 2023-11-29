@@ -16,6 +16,9 @@ function NavBar() {
                     <Link to="/login">login</Link>
                 </li>
                 <li>
+                    <Link to="/register">register</Link>
+                </li>
+                <li>
                     <Link to="/profile">profile</Link>
                 </li>
                 <li>
