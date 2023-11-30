@@ -13,7 +13,7 @@ function NavBar() {
             <ul className='nav'>
                 <li>Logo</li>
                 <li>
-                
+                <SearchBar/>
                 </li>
                 <li>
                     <Link to="/login">Login</Link>
