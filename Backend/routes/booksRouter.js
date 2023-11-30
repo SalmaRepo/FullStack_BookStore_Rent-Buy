@@ -7,7 +7,7 @@ const router=Router()
 
 
 router.get("/allBooks",getAllBooks);
-router.get("/getBookById/:id",auth,isAdmin,getBookById);
+router.get("/getBookById/:id",getBookById);
 router.post("/createBook",auth,isAdmin,createBook);
 router.patch("/updateBook/:id",auth,isAdmin,updateBook);
 router.delete("/deleteBook/:id",auth,isAdmin,deleteBook)
