@@ -6,6 +6,7 @@ export default function Container({ children }) {
     const [user,setUser] = useState(null)
     const [books,setBooks]=useState([])
     const [cart,setCart]=useState([])
+    const [search,setSearch]=useState([])
 
 
     useEffect(()=>{
@@ -28,7 +29,7 @@ export default function Container({ children }) {
     },[])
 
     return (
-        <MyContext.Provider value={{user,setUser,books,setBooks,cart,setCart}}>
+        <MyContext.Provider value={{user,setUser,books,setBooks,cart,setCart,search,setSearch}}>
             {children}
 
 
