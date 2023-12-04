@@ -1,0 +1,26 @@
+.booksDisp{
+    display: flex;
+    width: 60%;
+    margin: 5rem auto ;
+    flex-wrap:wrap;
+    gap: 2rem;
+
+}
+
+.book{
+    display: flex;
+    width: 30%;
+    margin: 0.5rem auto ;
+    flex-wrap:wrap;
+    flex-direction: column;
+    border: 2px solid;
+    align-items: center;
+}
+
+.bookImg{
+    width: 50%;
+    height: 40%;
+   margin-top: 1rem;
+    border: 2px solid;
+
+}
