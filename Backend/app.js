@@ -17,6 +17,8 @@ import usersRouter from "./routes/usersRouter.js"
 import booksRouter from "./routes/booksRouter.js"
 import searchRouter from "./routes/searchRouter.js"
 import cartRouter from "./routes/cartRouter.js"
+import likesRouter from "./routes/likesRouter.js"
+import reviewRouter from "./routes/reviewRouter.js"
 
 //mongoose connect 
 mongoose
@@ -32,6 +34,8 @@ app.use("/api/users", usersRouter);
 app.use("/api/books",booksRouter);
 app.use("/api/search",searchRouter);
 app.use("/api/cart",cartRouter);
+app.use("/api/likes",likesRouter);
+app.use("/api/reviews",reviewRouter);
  
 //error handling
 
