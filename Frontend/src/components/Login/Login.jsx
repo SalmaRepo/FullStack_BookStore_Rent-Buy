@@ -31,7 +31,11 @@ export default function Login() {
       .then((result) => {
         if (result.success) {
           setUser(result.data);
-        navigate("/") 
+
+            navigate("/") 
+
+       
+
         } else {
           console.log(result.message);
         }
