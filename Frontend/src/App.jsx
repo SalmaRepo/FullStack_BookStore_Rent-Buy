@@ -9,11 +9,7 @@ import Profile from './components/Profile/Profile'
 import Register from './components/Register/Register'
 import SearchBar from './components/SearchBar/SearchBar'
 import { MyContext } from './contexts/context'
-
-import Footer from './components/Footer/Footer'
-
 import SingleBook from './components/SingleBook/SingleBook'
-
 
 function App() {
  const {bookId}=useContext(MyContext)  
@@ -35,7 +31,7 @@ function App() {
       </Routes>
       
       </BrowserRouter>
-      <Footer/>
+   
     </div>
   )
 }
