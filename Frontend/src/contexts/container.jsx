@@ -4,10 +4,13 @@ import { MyContext } from "./context";
 export default function Container({ children }) {
   const [user, setUser] = useState(null);
   const [books, setBooks] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [search, setSearch] = useState([]);
+  const [cart, setCart] = useState(null);
+  const [search, setSearch] = useState(null);
   const [bookId, setBookId] = useState(null);
   const [requestedBook,setRequestedBook] = useState(null);
+  const [islike,setisLike]=useState(false);
+  const [like,setLike]=useState(null)
+  const [quant,setQuant]=useState(0)
 
   useEffect(() => {
     //on load
@@ -43,7 +46,10 @@ export default function Container({ children }) {
         bookId,
         setBookId,
         requestedBook,
-        setRequestedBook
+        setRequestedBook,
+        islike,setisLike,
+        like,setLike,
+        quant,setQuant
       }}
     >
       {children}

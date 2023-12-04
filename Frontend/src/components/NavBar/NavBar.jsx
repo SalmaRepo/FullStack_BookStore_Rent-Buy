@@ -4,25 +4,26 @@ import { MyContext } from '../../contexts/context'
 import Login from '../Login/Login'
 import Register from '../Register/Register'
 import SearchBar from '../SearchBar/SearchBar'
+import './navbar.css'
 
 function NavBar() {
     const {user}=useContext(MyContext)
   return (
     <div className='navbar'>
-     
+            <div>Logo</div>
             <ul className='nav'>
-                <li>Logo</li>
+                {/* <li>Logo</li> */}
                 <li>
                 <SearchBar/>
                 </li>
                 <li>
-                    <Link to="/login">Login</Link>
+                    <Link to="/login" className='link'>Login</Link>
                 </li>
                 {user&&<li>
-                    <Link to="/profile">profile</Link>
+                    <Link to="/profile" className='link'>profile</Link>
                 </li>}
                 <li>
-                    <Link to="/cart">cart</Link>
+                    <Link to="/cart" className='link'>cart</Link>
                 </li>
             </ul>
       
