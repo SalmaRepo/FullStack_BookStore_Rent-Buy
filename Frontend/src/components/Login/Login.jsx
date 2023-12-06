@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { MyContext } from "../../contexts/context";
 import Register from "../Register/Register";
 import { Link } from "react-router-dom";
+import NavBar from "../NavBar/NavBar";
 
 export default function Login() {
   const { user, setUser } = useContext(MyContext);
@@ -43,6 +44,9 @@ export default function Login() {
       .catch((err) => console.log(err));
   };
   return (
+    <div>
+ <NavBar/>
+ 
     <div
       style={{
         width: "30rem",
@@ -72,6 +76,7 @@ export default function Login() {
         <p>Dont have an Account, please Register</p>
         <Link to="/register">Regsiter</Link>
       </form>
+    </div>
     </div>
   );
 }

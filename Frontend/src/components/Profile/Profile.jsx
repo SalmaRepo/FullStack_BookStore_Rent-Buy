@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { MyContext } from '../../contexts/context'
 
 import { useNavigate } from 'react-router-dom'
+import NavBar from '../NavBar/NavBar'
 
 function Profile() {
 const {user,setUser} = useContext(MyContext)
@@ -14,6 +15,9 @@ const logoutUser =()=>{
 }
 
 return (
+  <div>
+
+ <NavBar/>
      <div>
          <h1>Profile Page</h1>
          <h2>{user?.firstName} {user?.lastName}</h2>
@@ -23,6 +27,7 @@ return (
          })}</h4>
          <button onClick={logoutUser}>logout</button>
         
+     </div>
      </div>
    )
  }
