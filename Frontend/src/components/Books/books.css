@@ -1,26 +1,74 @@
-.booksDisp{
-    display: flex;
-    width: 60%;
-    margin: 5rem auto ;
-    flex-wrap:wrap;
-    gap: 2rem;
-
+.booksDisp {
+  display: flex;
+  width: 90rem;
+  margin: 5rem auto;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.book{
-    display: flex;
-    width: 30%;
-    margin: 0.5rem auto ;
-    flex-wrap:wrap;
-    flex-direction: column;
-    border: 2px solid;
-    align-items: center;
+.book {
+  display: flex;
+  width: 20rem;
+  margin: 0.5rem auto;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 18px;
+  background: #e6e9d9;
+  box-shadow: 28px 28px 56px #d8dbcc, -28px -28px 56px #f4f7e6;
+  overflow: hidden;
 }
 
-.bookImg{
-    width: 50%;
-    height: 40%;
-   margin-top: 1rem;
-    border: 2px solid;
+.bookImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  /* margin-top: 1rem;
+  border: 2px solid; */
+}
 
+.bookcard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 16rem;
+  align-items: flex-start;
+}
+
+.bookcard h4,
+.bookcard p {
+  margin: 1rem;
+}
+
+.book button {
+  cursor: pointer;
+  width: 6rem;
+  height: 1.5rem;
+  margin: 1.5rem;
+  border: 1px solid darkgray;
+  padding: 1rem;
+  background-color: transparent;
+  flex: 1 1;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+button a {
+  color: #5b5e4c;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.book button a::after {
+  color: #5b5e4c;
+}
+
+.book button:hover {
+  background-color: #5b5e4c;
+}
+
+.book button a:hover {
+  color: white;
 }
