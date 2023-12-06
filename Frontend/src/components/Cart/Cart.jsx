@@ -123,6 +123,7 @@ let res=result.orders?.reduce((acc,order,index)=>{
   const totalItems=()=>{
     return cart?.reduce((acc, order) => {
       acc += order.quantity;
+      setQuant(acc)
       return acc;
     }, 0);
   } 
