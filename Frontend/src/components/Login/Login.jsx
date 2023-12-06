@@ -1,10 +1,10 @@
-
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { MyContext } from "../../contexts/context";
 import Register from "../Register/Register";
 import { Link } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
+import "./login.css";
 
 export default function Login() {
   const { user, setUser } = useContext(MyContext);
@@ -33,10 +33,7 @@ export default function Login() {
         if (result.success) {
           setUser(result.data);
 
-            navigate("/") 
-
-       
-
+          navigate("/");
         } else {
           console.log(result.message);
         }
@@ -44,39 +41,35 @@ export default function Login() {
       .catch((err) => console.log(err));
   };
   return (
-    <div>
- <NavBar/>
- 
-    <div
-      style={{
-        width: "30rem",
-        height:"30rem",
-        margin: "2rem auto",
-        padding:"2rem",
-        border: "2px solid",
-        position: "absolute",
-        zIndex: "1",
-        left: "30rem",
-        top:"3rem"
-      }}
-    >
-      <h1>Login</h1>
+    <div className="loginPage">
+      <NavBar />
 
+      <main className="loginContainer-content">
+        <h2>Sign in or Create an Account</h2>
 
-      <form
-        action=""
-        style={{ width: "10%", display: "flex", flexDirection: "column" }}
-        onSubmit={loginUser}
-      >
-        <label htmlFor="email">Email : </label>
-        <input type="email" id="email" name="email" />
-        <label htmlFor="password">Password : </label>
-        <input type="password" id="password" name="password" />
-        <button>Login</button>
-        <p>Dont have an Account, please Register</p>
-        <Link to="/register">Regsiter</Link>
-      </form>
-    </div>
+        <form
+          className="loginContainer-content form"
+          action=""
+          onSubmit={loginUser}>
+          {/* <label htmlFor="email">Email : </label> */}
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email Address"
+          />
+          {/* <label htmlFor="password">Password : </label> */}
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+          />
+        </form>
+        <button className="singIn">Sign In & Continue</button>
+        <p>Dont have an Account, please Register. </p>
+        <Link to="/register">Create an Account</Link>
+      </main>
     </div>
   );
 }

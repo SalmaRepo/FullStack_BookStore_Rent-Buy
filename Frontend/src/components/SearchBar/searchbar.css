@@ -1,0 +1,27 @@
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 25rem;
+  background-color: white;
+  height: 2.75rem;
+  box-sizing: border-box;
+  color: black;
+}
+
+.search-books {
+  border: 0;
+  display: inline-block;
+  background-color: transparent;
+  font-weight: 700;
+  color: gray;
+  text-align: left;
+  width: 29.25rem;
+  height: 2rem;
+  margin: 0 2rem;
+}
+
+.icon {
+  margin-left: 2rem;
+}

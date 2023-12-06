@@ -1,6 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { MyContext } from "../../contexts/context";
 import { Link, useNavigate } from "react-router-dom";
+import "./searchbar.css";
+import { FaSearch } from "react-icons/fa";
 
 function SearchBar() {
   const { search, setSearch, setBookId, bookId } = useContext(MyContext);
@@ -26,36 +28,38 @@ function SearchBar() {
 
   return (
     <div>
-      <form action="" >
-        <input type="text" name="search" onInput={handleSearch} />
+      <form className="searchbar" action="">
+        <FaSearch className="icon" />
+        <input
+          className="search-books"
+          placeholder="Search Books"
+          type="text"
+          name="search"
+          onInput={handleSearch}
+        />
       </form>
       <div>
-
-   
-      {
-        search?
-        search.length>0?
-          search.map((result) => {
-            return (
-              <div key={result._id}>
-                <button
-                  onClick={() => {
-                    console.log(result._id);
-                    setBookId(result._id);
-                    setSearch(null);
-                  }}
-                >
-                  <Link to={`/books/${result._id}`} state={result}>
-                    {result.title}
-                  </Link>
-                </button>
-              </div>
-            );
-          }):"no book found":""
-        
-      
-      }
-         </div>
+        {search
+          ? search.length > 0
+            ? search.map((result) => {
+                return (
+                  <div key={result._id}>
+                    <button
+                      onClick={() => {
+                        console.log(result._id);
+                        setBookId(result._id);
+                        setSearch(null);
+                      }}>
+                      <Link to={`/books/${result._id}`} state={result}>
+                        {result.title}
+                      </Link>
+                    </button>
+                  </div>
+                );
+              })
+            : "no book found"
+          : ""}
+      </div>
     </div>
   );
 }

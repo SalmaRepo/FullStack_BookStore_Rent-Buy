@@ -1,21 +1,27 @@
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: black;
-    color: white;
+.navbar {
+  display: flex;
+  margin: 0;
+  width: 90rem;
+  height: 4.38rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: #5b5e4c;
+  color: white;
 }
 
-.nav{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    width: 80%;
-
-    
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  width: 80%;
 }
 
-.nav .link{
-    color: white;
-    font-size: 1.5rem;
+.nav .link {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
 }
