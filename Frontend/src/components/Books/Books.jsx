@@ -9,6 +9,7 @@ function Books() {
     fetch("http://localhost:4000/api/books/allBooks")
       .then(res => res.json())
       .then(result => {
+        
         setBooks(result.data)
       }).catch(err => console.log(err))
   }, [])
@@ -33,16 +34,16 @@ function Books() {
 
                 }
               }><Link to={`/books/${book._id}`} state={book}>
-             Buy
+            Details
             </Link></button>
-            <button onClick={
+           {/*  <button onClick={
                 ()=>{
                   setBookId(book._id)
 
                 }
               }><Link to={`/books/${book._id}`} state={book}>
            Rent
-            </Link></button>
+            </Link></button> */}
             </div>
           )
         })

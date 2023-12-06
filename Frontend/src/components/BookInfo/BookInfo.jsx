@@ -3,6 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 import Like from "../../../../Backend/models/likeSchema";
 import { MyContext } from "../../contexts/context";
 import Likes from "../Likes/Likes";
+import NavBar from "../NavBar/NavBar";
+import toast,{Toaster} from 'react-hot-toast'
 
 const BookInfo = () => {
   const navigate = useNavigate();
@@ -19,7 +21,8 @@ const BookInfo = () => {
     islike,
     quant,
     setisLike,
-    setQuant
+    setQuant,
+    rent,setRent
   } = useContext(MyContext);
   console.log(bookId);
 
@@ -44,7 +47,7 @@ const BookInfo = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         userId: user._id,
-        bookId: bookId,
+        bookId: requestedBook._id,
       }),
     })
       .then((res) => res.json())
@@ -66,11 +69,33 @@ const BookInfo = () => {
 
   //the above likes part will be handled later
 
-  const buyBook = () => {
+  const addToCart=()=>{
+    if(user){
+      const foundItem=cart.find(item=>item._id===requestedBook._id)
+      
+      if(foundItem){
+        foundItem.quantity++
+        localStorage.setItem("cart",JSON.stringify(cart))
+        setCart([...cart])
+        navigate("/cart")
+      }else{
+        setCart([...cart,{...requestedBook,quantity:1}])
+        localStorage.setItem("cart",JSON.stringify([...cart,{...requestedBook,quantity:1}]))
+        navigate("/cart")
+      }
+    }else{
+      toast.error("Login to Add to Cart")
+
+    }
+    
+  }
+
+  /* const buyBook = () => {
     const buy={
       books: [bookId],
       totalPrice: parseInt(requestedBook.download_count.toString().substring(0, 3)),
-      userId: user._id
+      userId: user._id,
+      toBuy:true
     }
 
     const gettoken=localStorage.getItem("token")
@@ -84,42 +109,36 @@ const BookInfo = () => {
   .then(result => {
 
   console.log(result)
-
-    if(cart){
-      const duplicates=cart.filter(order=>{
-        if(order.books[0]._id===bookId){
-          return order
-        }
-      })
-
+      const duplicates=cart?.find(order=>order.books[0]._id===bookId)
       console.log(duplicates)
 
-      if(duplicates.length>0){
-        console.log(duplicates.length)
+      if(duplicates){
         window.alert("order already exists, do you want to add more")
-        setQuant(quant+1)
-        cart[cart.length-1].books[0].quantity=quant
-       
-       
-        navigate("/cart")
+        duplicates.books[0].quantity++
+         navigate("/cart")
         
       }else{
-   
+        result.updatedUser.orders.map(order=>order.books[0].quantity=1)
         setCart(result.updatedUser.orders)
         navigate("/cart")
-      }
-    }else{
-  
-      setCart(result.updatedUser.orders)
-        navigate("/cart")
-    }      
-  })
-  .catch((err) => console.log(err))
-  };
+      }    
+  }).catch((err) => console.log(err))
+  }; */
 
+  const rentBook=()=>{
+      setRent(!rent)
+
+  }
 console.log(cart)
+
+const minDate=new Date().toDateString()
+console.log(minDate)
+
   return (
+    <div>
+      <NavBar/>
     <div style={{ display: "flex", gap: "2rem" }}>
+    <Toaster position="top-center"/>
       <img src={requestedBook?.formats["image/jpeg"]} />
       <div>
         <h3>{requestedBook?.title}</h3>
@@ -141,7 +160,7 @@ console.log(cart)
       <div>
         <button
           onClick={() => {
-            setisLike(!islike);
+            setisLike(true);
             createLike();
             islike && updateLike();
           }}
@@ -151,11 +170,16 @@ console.log(cart)
         <button>Review</button>
 
         <div>
-          <button onClick={buyBook}>Buy</button>
-          <button>Rent</button>
+          <button onClick={addToCart}>Add to Cart</button>
+          <button onClick={rentBook}>Rent</button>
         </div>
 
+        {rent&&<div>
+        <input type="date"  min={`${minDate}`}/>
+        </div>}
+
       </div>
+    </div>
     </div>
   );
 };

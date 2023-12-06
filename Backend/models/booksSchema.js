@@ -17,7 +17,10 @@ const booksSchema=new Schema({
     formats: {
        //this needs to be checked if it is throwing error
       },
-    download_count:Number
+    download_count:Number,
+    quantity:{type:Number,default:1},
+    
+
 })
 
 const Book=model("books",booksSchema)

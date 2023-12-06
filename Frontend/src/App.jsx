@@ -13,6 +13,7 @@ import { MyContext } from './contexts/context'
 import Footer from './components/Footer/Footer'
 
 import SingleBook from './components/SingleBook/SingleBook'
+import NavBar from './components/NavBar/NavBar'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <div>
+  
       <BrowserRouter>
       <Routes>
       <Route path="/" element={<Home/>}/>
@@ -35,7 +37,7 @@ function App() {
       </Routes>
       
       </BrowserRouter>
-      <Footer/>
+    <Footer/> 
     </div>
   )
 }

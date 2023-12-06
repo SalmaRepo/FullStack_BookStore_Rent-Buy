@@ -5,17 +5,22 @@ import { MyContext } from "./context";
 export default function Container({ children }) {
   const [user, setUser] = useState(null);
   const [books, setBooks] = useState([]);
-  const [cart, setCart] = useState(null);
+  const [cart, setCart] = useState([]);
   const [search, setSearch] = useState(null);
   const [bookId, setBookId] = useState(null);
   const [requestedBook,setRequestedBook] = useState(null);
   const [islike,setisLike]=useState(false);
-  const [like,setLike]=useState(null)
-  const [quant,setQuant]=useState(0)
+  const [like,setLike]=useState(null);
+  const [quant,setQuant]=useState(0);
+  const [rent,setRent]=useState(false)
 
   useEffect(() => {
     //on load
     const token = localStorage.getItem("token");
+    const cart=localStorage.getItem("cart")
+    if(cart){
+      setCart(JSON.parse(cart))
+    }
 
     if (token) {
       fetch("http://localhost:4000/api/users/verifytoken", {
@@ -50,7 +55,8 @@ export default function Container({ children }) {
         setRequestedBook,
         islike,setisLike,
         like,setLike,
-        quant,setQuant
+        quant,setQuant,
+        rent,setRent
       }}
     >
       {children}

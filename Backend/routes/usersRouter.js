@@ -16,7 +16,7 @@ router.delete("/deleteUser/:id", auth, isAdmin, deleteUser);
 router.get("/verifytoken", auth, (req, res) => {
   res.send({ success: true, data: req.user })
 })
-router.get("/getAllOrdersOfUser", auth, isAdmin, getAllOrdersOfUser)
+router.get("/getAllOrdersOfUser/:id", auth, isAdmin, getAllOrdersOfUser)
 
 
 export default router;

@@ -120,11 +120,11 @@ export const getAllUsers = async (req, res, next) => {
 
 export const getAllOrdersOfUser=async (req,res,next)=>{
   try {
-    const user = await User.findOne({_id:req.params.id}).populate("order");
-   
+    const user = await User.findOne({_id:req.params.id}).populate({ path: "orders", populate: { path: "books" } })
+    
 
   /*  const user=await User.findOne({_id:req.params.id}) */
-
+console.log(user)
   res.send(user)
 
 
