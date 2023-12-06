@@ -12,7 +12,8 @@ export default function Container({ children }) {
   const [islike,setisLike]=useState(false);
   const [like,setLike]=useState(null);
   const [quant,setQuant]=useState(0);
-  const [rent,setRent]=useState(false)
+  const [rent,setRent]=useState(false);
+  const [isLogin,setisLogin]=useState(false);
 
   useEffect(() => {
     //on load
@@ -56,7 +57,8 @@ export default function Container({ children }) {
         islike,setisLike,
         like,setLike,
         quant,setQuant,
-        rent,setRent
+        rent,setRent,
+        isLogin,setisLogin
       }}
     >
       {children}

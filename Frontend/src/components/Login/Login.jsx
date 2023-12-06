@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 
 export default function Login() {
-  const { user, setUser } = useContext(MyContext);
+  const { user, setUser,isLogin,setisLogin } = useContext(MyContext);
   const navigate = useNavigate();
 
   const loginUser = (e) => {
@@ -32,10 +32,8 @@ export default function Login() {
       .then((result) => {
         if (result.success) {
           setUser(result.data);
-
+         
             navigate("/") 
-
-       
 
         } else {
           console.log(result.message);
