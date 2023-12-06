@@ -7,7 +7,7 @@ import NavBar from "../NavBar/NavBar";
 import "./login.css";
 
 export default function Login() {
-  const { user, setUser } = useContext(MyContext);
+  const { user, setUser,isLogin,setisLogin } = useContext(MyContext);
   const navigate = useNavigate();
 
   const loginUser = (e) => {
@@ -33,7 +33,12 @@ export default function Login() {
         if (result.success) {
           setUser(result.data);
 
-          navigate("/");
+
+     
+         
+            navigate("/") 
+
+
         } else {
           console.log(result.message);
         }

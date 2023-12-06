@@ -12,15 +12,21 @@ export default function Container({ children }) {
   const [islike,setisLike]=useState(false);
   const [like,setLike]=useState(null);
   const [quant,setQuant]=useState(0);
-  const [rent,setRent]=useState(false)
+  const [isRent,setIsRent]=useState(false);
+  const [isLogin,setisLogin]=useState(false);
+  const [rentTill,setRentTill]=useState("")
+  const [isChangeInCart,setIsChangeInCart]=useState(false)
+  
 
   useEffect(() => {
     //on load
     const token = localStorage.getItem("token");
     const cart=localStorage.getItem("cart")
+   
     if(cart){
       setCart(JSON.parse(cart))
     }
+  
 
     if (token) {
       fetch("http://localhost:4000/api/users/verifytoken", {
@@ -56,7 +62,11 @@ export default function Container({ children }) {
         islike,setisLike,
         like,setLike,
         quant,setQuant,
-        rent,setRent
+        isRent,setIsRent,
+        isLogin,setisLogin,
+        isChangeInCart,setIsChangeInCart,
+        rentTill,setRentTill
+      
       }}
     >
       {children}
