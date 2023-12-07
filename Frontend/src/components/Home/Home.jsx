@@ -22,10 +22,10 @@ function Home() {
             </p>
           </div>
         </div>
-        <div className="ellipse-parent">
+        {/* <div className="ellipse-parent">
           <img className="frame-item" alt="" src="/ellipse-1@2x.png" />
           <h2 className="our-books">Our Books</h2>
-        </div>
+        </div> */}
       </div>
       <Books />
     </div>

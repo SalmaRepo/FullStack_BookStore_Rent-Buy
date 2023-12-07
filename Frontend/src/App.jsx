@@ -14,6 +14,7 @@ import Footer from './components/Footer/Footer'
 
 import SingleBook from './components/SingleBook/SingleBook'
 import NavBar from './components/NavBar/NavBar'
+import Checkout from './components/Checkout/Checkout'
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       
 
       <Route path="/cart" element={<Cart/>}/>   
+      <Route path="/checkout" element={<Checkout/>}/>  
       </Routes>
       
       </BrowserRouter>

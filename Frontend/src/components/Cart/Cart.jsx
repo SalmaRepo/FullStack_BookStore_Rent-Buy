@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { MyContext } from "../../contexts/context";
 import NavBar from "../NavBar/NavBar";
 
@@ -16,7 +17,10 @@ function Cart() {
     setIsRent,
     rentTill,
     setRentTill,
+    setOrders
   } = useContext(MyContext);
+
+  const navigate=useNavigate()
 
   console.log(user);
   console.log(cart);
@@ -195,6 +199,8 @@ let res=result.orders?.reduce((acc,order,index)=>{
     const toBuy=isRent?false:true;
     
     const rentPeriod=rentTill;
+  
+    
 
     const finalOrder={
       books:bookIds,
@@ -202,7 +208,8 @@ let res=result.orders?.reduce((acc,order,index)=>{
       userId:user._id,
       tobuy:toBuy,
       toRent:isRent,
-      rentTill:rentPeriod
+      rentTill:rentPeriod,
+      orderPlacedOn:new Date().toDateString(),
     }
 
     fetch("http://localhost:4000/api/cart/addorder",{
@@ -212,6 +219,8 @@ let res=result.orders?.reduce((acc,order,index)=>{
     }).then(res=>res.json())
     .then(result=>{
       console.log("order",result)
+      setOrders(result.updatedUser)
+      navigate("/checkout")
     })
     .catch(err=>console.log(err))
   };
@@ -271,7 +280,7 @@ let res=result.orders?.reduce((acc,order,index)=>{
                             -
                           </button>
                           <button onClick={() => setIsRent(false)}>Buy</button>
-                          <button onClick={() => setIsRent(true)}>Rent</button>
+                          <button onClick={() => setIsRent(!isRent)}>Rent</button>
                         </div>
                         {isRent && (
                           <input
@@ -299,7 +308,7 @@ let res=result.orders?.reduce((acc,order,index)=>{
           <h2>
             Subtotal({totalItems()} items):{totalPrice()}
           </h2>
-          <button onClick={checkout}>Proceed to Checkout</button>
+          <button onClick={checkout}><Link to="/checkout">Proceed to Checkout</Link></button>
         </div>
       </div>
     </div>

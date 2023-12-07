@@ -6,7 +6,8 @@ const orderSchema=new Schema({
     userId:{type:Schema.Types.ObjectId,ref:"user",required:true},
     tobuy:{type:Boolean,default:false},
     toRent:{type:Boolean,default:false},
-    rentTill:{type:Date}
+    rentTill:{type:String},
+    orderPlacedOn:{type:Date}
 })
 
 const Order=model("order",orderSchema)
