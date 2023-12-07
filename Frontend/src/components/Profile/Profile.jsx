@@ -16,19 +16,28 @@ const logoutUser =()=>{
 
 return (
   <div>
+      <NavBar />
+      <div >
+        <h1>Profile Page</h1>
+        {user && (
+          <div>
+            <h2>{user.firstName} {user.lastName}</h2>
+            <h3>Email: {user.email}</h3>
 
- <NavBar/>
-     <div>
-         <h1>Profile Page</h1>
-         <h2>{user?.firstName} {user?.lastName}</h2>
-         <h3>{user?.email}</h3>
-         <h4>{user?.orders?.map(order=>{
-           return(<div key={order._id}> <h3>{order._id}</h3> </div>)
-         })}</h4>
-         <button onClick={logoutUser}>logout</button>
-        
-     </div>
-     </div>
+            <h4>
+          Orders:
+          {user?.orders?.map((order) => (
+            <div key={order._id}>
+              <h3>{order._id}</h3>
+              {/* Include other order details as needed */}
+            </div>
+          ))}
+        </h4>
+          </div>
+        )}
+        <button onClick={logoutUser}>Logout</button>
+      </div>
+    </div>
    )
  }
 
