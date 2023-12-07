@@ -1,0 +1,17 @@
+  button.cartButton {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color:#a4ac86;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    
+  }
+  
+  
+  button.cartButton:hover {
+    background-color: #5B5E4C;
+  }
+  

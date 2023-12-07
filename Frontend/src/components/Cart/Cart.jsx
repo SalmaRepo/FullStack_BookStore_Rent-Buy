@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { MyContext } from "../../contexts/context";
 import NavBar from "../NavBar/NavBar";
+import "./cart.css";
 
 function Cart() {
   const {
@@ -308,7 +309,7 @@ let res=result.orders?.reduce((acc,order,index)=>{
           <h2>
             Subtotal({totalItems()} items):{totalPrice()}
           </h2>
-          <button onClick={checkout}><Link to="/checkout">Proceed to Checkout</Link></button>
+          <button className="cartButton" onClick={checkout}><Link to="/checkout">Proceed to Checkout</Link></button>
         </div>
       </div>
     </div>
