@@ -12,7 +12,7 @@ function NavBar() {
   const { user,isLogin,quant } = useContext(MyContext);
   return (
     <div className="navbar">
-       <Link to="/"><div>Logo</div></Link>
+       <Link to="/" className="link"><img src="/bookStoreLogo.jpg" alt="" className="logo" /></Link>
       <ul className="nav">
         {/* <li>Logo</li> */}
         <li>
@@ -25,7 +25,7 @@ function NavBar() {
              <Link to="/profile" className='link'>profile</Link>
             </li>}
             <li>
-                    <Link to="/cart" className='link'><MdOutlineShoppingCart /><div><p>{quant}</p></div></Link>
+                    <Link to="/cart" className='link cart'><MdOutlineShoppingCart className="cartIcon"/><div className="cartItems"><p>+{quant}</p></div></Link>
              </li>
          
       </ul>

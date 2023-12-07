@@ -171,7 +171,7 @@ console.log(minDate)
 
         <div>
           <button onClick={addToCart}>Add to Cart</button>
-          <button onClick={rentBook}>Rent</button>
+  {/*         <button onClick={rentBook}>Rent</button> */}
         </div>
 
         {rent&&<div>

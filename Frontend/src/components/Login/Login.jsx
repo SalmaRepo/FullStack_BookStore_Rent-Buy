@@ -32,9 +32,6 @@ export default function Login() {
       .then((result) => {
         if (result.success) {
           setUser(result.data);
-
-
-     
          
             navigate("/") 
 
@@ -70,10 +67,11 @@ export default function Login() {
             name="password"
             placeholder="Password"
           />
-        </form>
-        <button className="singIn">Sign In & Continue</button>
+          <button className="singIn">Sign In & Continue</button>
         <p>Dont have an Account, please Register. </p>
         <Link to="/register">Create an Account</Link>
+        </form>
+        
       </main>
     </div>
   );

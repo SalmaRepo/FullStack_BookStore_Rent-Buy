@@ -30,22 +30,23 @@ function Books() {
               <h4>{book.title}</h4>
               <h4>Authors</h4>
               {book.authors.map((author) => (
-                <li key={author.id}>{author.name}</li>
+                <li key={author.id} className="authorName">{author.name}</li>
               ))}
               <h4>Genre</h4>
               <p>
                 {book.bookshelves[0] || book.subjects[book.subjects.length - 2]}
               </p>
             </div>
-
+            <Link to={`/books/${book._id}`} state={book}>
             <button
               onClick={() => {
                 setBookId(book._id);
               }}>
-              <Link to={`/books/${book._id}`} state={book}>
+              
                 Details
+                </button>
               </Link>
-            </button>
+          
             {/*  <button onClick={
                 ()=>{
                   setBookId(book._id)

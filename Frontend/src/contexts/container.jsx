@@ -15,13 +15,16 @@ export default function Container({ children }) {
   const [isRent,setIsRent]=useState(false);
   const [isLogin,setisLogin]=useState(false);
   const [rentTill,setRentTill]=useState("")
-  const [isChangeInCart,setIsChangeInCart]=useState(false)
+  const [isChangeInCart,setIsChangeInCart]=useState(false);
+  const [orders,setOrders]=useState([]);
+  const [completedOrders,setCompletedOrders]=useState([])
   
 
   useEffect(() => {
     //on load
     const token = localStorage.getItem("token");
-    const cart=localStorage.getItem("cart")
+    const cart=localStorage.getItem("cart");
+ 
    
     if(cart){
       setCart(JSON.parse(cart))
@@ -41,8 +44,14 @@ export default function Container({ children }) {
             console.log(result.message);
           }
         });
-    }
+      }
+
+ 
+
+       
   }, []);
+
+
 
   return (
     <MyContext.Provider
@@ -65,7 +74,9 @@ export default function Container({ children }) {
         isRent,setIsRent,
         isLogin,setisLogin,
         isChangeInCart,setIsChangeInCart,
-        rentTill,setRentTill
+        rentTill,setRentTill,
+        orders,setOrders,
+        completedOrders,setCompletedOrders
       
       }}
     >
