@@ -5,6 +5,9 @@ import { MyContext } from "../../contexts/context";
 import Likes from "../Likes/Likes";
 import NavBar from "../NavBar/NavBar";
 import toast,{Toaster} from 'react-hot-toast'
+import "./BookInfo.css"
+import Footer from "../Footer/Footer";
+import Base_URL from "../../../config/urlBase";
 
 const BookInfo = () => {
   const navigate = useNavigate();
@@ -27,7 +30,7 @@ const BookInfo = () => {
   console.log(bookId);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/api/books/getBookById/${bookId}`)
+    fetch(`${Base_URL}/api/books/getBookById/${bookId}`)
       .then((res) => res.json())
       .then((result) => {
         console.log(result.data);
@@ -42,7 +45,7 @@ const BookInfo = () => {
 
   //likes need to handled later
   const createLike = () => {
-    fetch(`http://localhost:4000/api/likes/addlike`, {
+    fetch(`${Base_URL}/api/likes/addlike`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -56,7 +59,7 @@ const BookInfo = () => {
   };
 
   const updateLike = () => {
-    fetch(`http://localhost:4000/api/likes/updatelike/${user._Id}/${bookId}`, {
+    fetch(`${Base_URL}/api/likes/updatelike/${user._Id}/${bookId}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -135,9 +138,9 @@ const minDate=new Date().toDateString()
 console.log(minDate)
 
   return (
-    <div>
-      <NavBar/>
-    <div style={{ display: "flex", gap: "2rem" }}>
+    <div className="bookInfo">
+    <NavBar/>
+    <div style={{ display: "flex", gap: "2rem" }} className="bookInfoDetail">
     <Toaster position="top-center"/>
       <img src={requestedBook?.formats["image/jpeg"]} />
       <div>
@@ -158,7 +161,7 @@ console.log(minDate)
       </div>
 
       <div>
-        <button
+       {/*  <button
           onClick={() => {
             setisLike(true);
             createLike();
@@ -168,9 +171,9 @@ console.log(minDate)
           Like{islike && like?.like}
         </button>
         <button>Review</button>
-
+ */}
         <div>
-          <button onClick={addToCart}>Add to Cart</button>
+          <button onClick={addToCart} className="bookInfoAddtoCart">Add to Cart</button>
   {/*         <button onClick={rentBook}>Rent</button> */}
         </div>
 
@@ -180,6 +183,7 @@ console.log(minDate)
 
       </div>
     </div>
+    <Footer/>
     </div>
   );
 };

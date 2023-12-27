@@ -22,11 +22,11 @@ import reviewRouter from "./routes/reviewRouter.js"
 
 //mongoose connect 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/bookstore")
+  .connect("mongodb://127.0.0.1:27017/bookstore"||"mongodb+srv://salmashaikh751:X1IBMWQwiQXjKARE@cluster0.n0zgkci.mongodb.net/bookstore")
   .then(() => console.log("connected to DB"))
   .catch((err) => console.log(err));
 
-app.use(cors({origin:"http://localhost:5173",exposedHeaders:["token"]}))
+app.use(cors({origin:["http://localhost:5173","https://record-client/render"],exposedHeaders:["token"]}))
 
 
 //routes

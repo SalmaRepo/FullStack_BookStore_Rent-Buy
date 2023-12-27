@@ -3,6 +3,7 @@ import { MyContext } from "../../contexts/context";
 import { Link, useNavigate } from "react-router-dom";
 import "./searchbar.css";
 import { FaSearch } from "react-icons/fa";
+import Base_URL from "../../../config/urlBase";
 
 function SearchBar() {
   const { search, setSearch, setBookId, bookId } = useContext(MyContext);
@@ -12,7 +13,7 @@ function SearchBar() {
     e.preventDefault();
     const searchInput = e.target.value;
 
-    fetch(`http://localhost:4000/api/search/book?name=${searchInput}`, {
+    fetch(`${Base_URL}/api/search/book?name=${searchInput}`, {
       /* method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(searchInput), */
@@ -36,15 +37,14 @@ function SearchBar() {
           type="text"
           name="search"
           onInput={handleSearch}
+
         />
       </form>
-      <div>
-        {search
-          ? search.length > 0
-            ? search.map((result) => {
+      {search?.length>0&&<div className="searchResult">
+        {search ? search.map((result) => {
                 return (
                   <div key={result._id}>
-                    <button
+                    <button className="searchResultButton"
                       onClick={() => {
                         console.log(result._id);
                         setBookId(result._id);
@@ -58,8 +58,8 @@ function SearchBar() {
                 );
               })
             : "no book found"
-          : ""}
-      </div>
+          }
+      </div>}
     </div>
   );
 }

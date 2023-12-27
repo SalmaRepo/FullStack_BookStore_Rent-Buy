@@ -5,6 +5,7 @@ import Register from "../Register/Register";
 import { Link } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import "./login.css";
+import Base_URL from "../../../config/urlBase";
 
 export default function Login() {
   const { user, setUser,isLogin,setisLogin } = useContext(MyContext);
@@ -17,7 +18,7 @@ export default function Login() {
       password: e.target.password.value,
     };
 
-    fetch("http://localhost:4000/api/users/login", {
+    fetch(`${Base_URL}/api/users/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(loginInfo),

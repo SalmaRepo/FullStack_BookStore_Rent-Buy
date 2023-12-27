@@ -8,6 +8,8 @@
   height: 2.75rem;
   box-sizing: border-box;
   color: black;
+  position: relative;
+  width: 80%;
 }
 
 .search-books {
@@ -24,4 +26,31 @@
 
 .icon {
   margin-left: 2rem;
+}
+
+
+.searchResult {
+  height: 20vh;
+  z-index: 300;
+  position: absolute;
+  background-color: white;
+  padding: 2rem;
+  overflow: auto;
+  top: 5rem;
+  width: 30%;
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+
+.searchResultButton{
+  color: black;
+  background-color: white;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  margin:0.3rem 0;
+}
+
+.searchResultButton a{
+  text-decoration: none;
 }

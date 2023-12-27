@@ -10,7 +10,7 @@
   align-items: center;
   flex-wrap: wrap;
 
-  background-color: #5b5e4c;
+  background-image: linear-gradient(to right bottom, #5d0391, #7b05ae, #9b05cb, #bd00e7, #bd00e7);
   color: white;
 
 }

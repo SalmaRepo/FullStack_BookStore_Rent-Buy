@@ -4,6 +4,7 @@ import { MyContext } from "../../contexts/context";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import "./profile.css"
+import Base_URL from "../../../config/urlBase";
 
 function Profile() {
   const { user, setUser, completedOrders, setCompletedOrders } =
@@ -14,7 +15,7 @@ function Profile() {
 
   useEffect(()=>{
     const token = localStorage.getItem("token");
-    fetch(`http://localhost:4000/api/users/getAllOrdersOfUser/${user?._id}`,{
+    fetch(`${Base_URL}/api/users/getAllOrdersOfUser/${user?._id}`,{
       method:"GET",
       headers: { token: token },
     }).then(res=>res.json())
