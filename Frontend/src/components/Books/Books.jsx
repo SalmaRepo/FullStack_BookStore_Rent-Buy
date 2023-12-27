@@ -2,11 +2,13 @@ import { useContext, useEffect } from "react";
 import { MyContext } from "../../contexts/context";
 import { Link } from "react-router-dom";
 import "./books.css";
+import Footer from "../Footer/Footer";
+import Base_URL from "../../../config/urlBase";
 function Books() {
   const { books, setBooks, setBookId } = useContext(MyContext);
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/books/allBooks")
+    fetch(`${Base_URL}/api/books/allBooks`)
       .then((res) => res.json())
       .then((result) => {
         console.log("hello", result);
@@ -21,6 +23,7 @@ function Books() {
         console.log(book);
         return (
           <div className="book" key={book._id}>
+            <div className="bookInt">
             <img
               className="bookImg"
               src={book?.formats && book.formats["image/jpeg"]}
@@ -36,6 +39,9 @@ function Books() {
               <p>
                 {book.bookshelves[0] || book.subjects[book.subjects.length - 2]}
               </p>
+              <h2>
+          {book?.download_count.toString().substring(0, 3)} Euros
+        </h2>
             </div>
             <Link to={`/books/${book._id}`} state={book}>
             <button
@@ -46,6 +52,9 @@ function Books() {
                 Details
                 </button>
               </Link>
+              
+            </div>
+            
           
             {/*  <button onClick={
                 ()=>{
@@ -58,6 +67,7 @@ function Books() {
           </div>
         );
       })}
+   
     </div>
   );
 }

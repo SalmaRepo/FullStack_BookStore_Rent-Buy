@@ -3,6 +3,8 @@ import { useContext } from "react";
 import toast,{Toaster} from 'react-hot-toast'
 import { useNavigate } from "react-router-dom";
 import { MyContext } from "../../contexts/context";
+import Footer from "../Footer/Footer";
+import "./Checkout.css"
 
 function Checkout() {
     const navigate=useNavigate()
@@ -26,7 +28,7 @@ function Checkout() {
   }
   console.log(isPay)
   return (
-    <div>
+    <div className="checkout">
       {isPay ? (
         <div><h1>Your Order is Placed, Thank You !!</h1></div>
       ) : (
@@ -77,11 +79,12 @@ function Checkout() {
             <button onClick={alertPay}>Gift Card</button>
           </div>
 
-          <div>
+          <div className="checkoutButton">
             <button onClick={pay}>Pay</button>
           </div>
         </div>
       )}
+      <Footer/>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Base_URL from "../../../config/urlBase";
 import { MyContext } from "../../contexts/context";
 import NavBar from "../NavBar/NavBar";
 import "./cart.css";
@@ -213,7 +214,7 @@ let res=result.orders?.reduce((acc,order,index)=>{
       orderPlacedOn:new Date().toDateString(),
     }
 
-    fetch("http://localhost:4000/api/cart/addorder",{
+    fetch(`${Base_URL}/api/cart/addorder`,{
       method:"POST",
       headers:{"token":token,"Content-Type":"application/json"},
       body:JSON.stringify(finalOrder)
@@ -231,57 +232,43 @@ let res=result.orders?.reduce((acc,order,index)=>{
   console.log(totalPrice()); */
   console.log(cart);
   return (
-    <div>
+    <div className="cart">
       <NavBar />
 
-      <div style={{ display: "flex", width: "100%", gap: "1rem" }}>
+      <div className="cart-inner">
         <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            border: "2px solid",
-            padding: "1rem",
-            width: "60%",
-            overflow: "scroll",
-            height: "100%",
-          }}
+          
+          className="cartItem"
         >
           {cart.length > 0 &&
             cart?.map((order) => {
               return (
                 <div key={order?._id}>
                   <div
-                    style={{
-                      display: "flex",
-                      width: "50%",
-                      alignItems: "center",
-                      borderBottom: "2px solid",
-                      margin: "2rem",
-                      gap: "2rem",
-                    }}
+  
+                    className="cartItem-inner"
                   >
                     <div>
                       <img
                         src={order?.formats["image/jpeg"]}
                         alt="bookimage"
-                        width="50%"
+                        width="40%"
                       />
-                      <div style={{ display: "flex" }}>
+                      <div style={{ display: "flex" }} className="cartItems-Edit">
                         <button onClick={() => deleteBookInCart(order)}>
-                          Delete
+                        <i class="fa-solid fa-trash-can"></i>
                         </button>
                         <button onClick={() => incrementBookInCart(order)}>
-                          +
+                        <i class="fa-solid fa-circle-plus"></i>
                         </button>
-                        <div style={{ display: "flex", gap: "0.5rem" }}>
+                        <div style={{ display: "flex", gap: "0.5rem", alignItems:"center" }}>
                           <h4>Quantity:</h4>
-
-                          <p>{order?.quantity}</p>
+                          <p style={{fontSize:"1.5rem"}}>{order?.quantity}</p>
                           <button onClick={() => decrementBookInCart(order)}>
-                            -
+                          <i class="fa-solid fa-circle-minus"></i>
                           </button>
-                          <button onClick={() => setIsRent(false)}>Buy</button>
-                          <button onClick={() => setIsRent(!isRent)}>Rent</button>
+                         {/*  <button onClick={() => setIsRent(false)}>Buy</button>
+                          <button onClick={() => setIsRent(!isRent)}>Rent</button> */}
                         </div>
                         {isRent && (
                           <input
@@ -293,21 +280,21 @@ let res=result.orders?.reduce((acc,order,index)=>{
                     </div>
 
                     <h3>{order?.title}</h3>
-                    <p>{order?.bookshelves[0]}</p>
+                    
 
-                    <h4>
+                    <h2>
                       Price: {order?.download_count.toString().substring(0, 3)}{" "}
                       Euro
-                    </h4>
+                    </h2>
                   </div>
                 </div>
               );
             })}
         </div>
 
-        <div>
+        <div className="cartTotal">
           <h2>
-            Subtotal({totalItems()} items):{totalPrice()}
+            Subtotal({totalItems()} items):{totalPrice()} Euros
           </h2>
           <button className="cartButton" onClick={checkout}><Link to="/checkout">Proceed to Checkout</Link></button>
         </div>

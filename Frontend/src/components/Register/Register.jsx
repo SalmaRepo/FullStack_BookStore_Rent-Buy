@@ -1,6 +1,7 @@
 import React from 'react'
 import toast,{Toaster} from 'react-hot-toast' //this is for popups after login
 import { useNavigate } from 'react-router-dom';
+import Base_URL from '../../../config/urlBase';
 
 export default function Register() {
   const navigate=useNavigate()
@@ -14,7 +15,7 @@ export default function Register() {
       password:e.target.password.value
     }
     
-    fetch("http://localhost:4000/api/users/register",{
+    fetch(`${Base_URL}/api/users/register`,{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify(user)

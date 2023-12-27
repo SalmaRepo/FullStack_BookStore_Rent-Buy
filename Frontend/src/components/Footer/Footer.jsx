@@ -7,7 +7,7 @@ function Footer() {
         backgroundColor: "#f0f0f0",
         padding: "10px",
         textAlign: "center",
-
+        position:"fixed",     
         bottom: 0,
         width: "100%",
       }}>
